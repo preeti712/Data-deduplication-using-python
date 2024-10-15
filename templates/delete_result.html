@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Result</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        
+        center {
+            margin-top: 50px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        h2 {
+            color: #666;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #fa536f;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        a:hover {
+            background-color: #ee6681;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #fa536f;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #ff8cb4;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>FREEDUP: "Free- Dup" & "Freed- Up"</h1>
+        <img src="freedup.png" alt="Freedup logo">
+        <h1>Delete Result</h1>
+        <h2>Successfully deleted files:</h2>
+        <ul>
+            {% for file_path in deleted_files %}
+                <li>{{ file_path }}</li>
+            {% endfor %}
+        </ul>
+        <h2>Failed to delete files:</h2>
+        <ul>
+            {% for file_path in failed_files %}
+                <li>{{ file_path }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/delete_success">Back to Delete Success</a>
+    </center>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Deletion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        
+        center {
+            margin-top: 50px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        button[type="submit"],
+        button#cancelBtn {
+            padding: 10px 20px;
+            background-color: #fa536f;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover,
+        button#cancelBtn:hover {
+            background-color: #ff8cb4;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>FREEDUP: "Free- Dup" & "Freed- Up"</h1>
+        <img src="freedup.png" alt="Freedup logo">
+        <h1>Confirm Deletion</h1>
+        <p>Are you sure you want to delete the following duplicate files?</p>
+        <form id="deleteForm" method="POST" action="/confirm_deletion">
+            {% for file_name, file_path in file_names|zip_lists(duplicate_files) %}
+                <label>
+                    <input type="checkbox" name="file_paths" value="{{ file_path }}"checked>
+                    {{ file_name }}
+                </label>
+                <br>
+            {% endfor %}
+            <button type="submit">Delete Selected Files</button>
+        </form>
+        <button id="cancelBtn" onclick="goBack()">Cancel</button>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </center>
+</body>
+</html>

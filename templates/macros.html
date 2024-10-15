@@ -1,0 +1,7 @@
+{% macro zip(a, b) %}
+    {% set length = a|length %}
+    {% set b = b[:length] %}
+    {% for i in range(length) %}
+        {{ (a[i], b[i]) }}
+    {% endfor %}
+{% endmacro %}

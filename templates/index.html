@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Freedup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        
+        center {
+            margin-top: 50px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
+        
+        label {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #fa536f;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #ff8cb4;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>FREEDUP: "Free- Dup" & "Freed- Up"</h1>
+        <img src="freedup.png" alt="Freedup logo">
+        <form method="POST" action="/">
+            <label for="folder_path">Folder Path:</label>
+            <input type="text" name="folder_path" placeholder="Enter folder path" required>
+            <button type="submit">Find Duplicate Files</button>
+        </form>
+    </center>
+</body>
+</html>
